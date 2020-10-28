@@ -34,7 +34,7 @@ Golem setup. If you encounter an issue then refer to https://handbook.golem.netw
 
 Geomandel requestor setup
 
-1. `git clone https://github/`
+1. `git clone https://github.com/Edhendil/golem-geomandel.git`
 2. (optional) Create virtual environment and activate it
 3. `pip install -r requirements.txt`
 
@@ -55,6 +55,10 @@ All parameters are optional. If not provided then the default values presented b
 * Budget: `-b 10.0` - budget for executing tasks on golem network
 * Max workers: `-w 10` - how many golem providers will execute subtasks
 * Subnet tag: `-s devnet-alpha.2` - name of the subnet
+
+To do:
+* Image width: currently it's always 2000 
+* Image height: currently it's always 2000 
 
 ## Limitations
 
