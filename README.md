@@ -22,7 +22,7 @@ Special thanks to the owner of https://github.com/crapp/geomandel github project
 
 ## Setup
 
-Golem setup. If you encounter an issue then refer to `https://handbook.golem.network/requestor-tutorials/flash-tutorial-of-requestor-development` for full set of instructions.
+Golem setup. If you encounter an issue then refer to https://handbook.golem.network/requestor-tutorials/flash-tutorial-of-requestor-development for full set of instructions.
 
 1. Install python 3
 1. `curl -sSf https://join.golem.network/as-requestor | bash -`
