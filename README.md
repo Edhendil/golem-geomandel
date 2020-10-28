@@ -7,6 +7,16 @@ It also is a full example showing how to build your own Docker image and use it 
 
 Special thanks to the owner of https://github.com/crapp/geomandel github project which I use to generate Mandelbrot images.
 
+## Table of contents
+* [Project structure](#project-structure)
+* [Setup](#setup)
+* [Requestor script execution](#requestor-script-execution)
+* [Limitations](#limitations)
+* [Zoom multipliers](#zoom-multipliers)
+* [Interesting coordinates](#interesting-coordinates)
+* [Create a video](#create-a-video)
+* [Sources](#sources)
+
 ## Project structure
 
 * docker/scripts/mandel.py - python script included in the Docker image which wraps the geomandel binary for ease of interaction
@@ -64,7 +74,7 @@ To do:
 
 Due to how geomandel is implemented the generated images start to lose details at the zoom factor of 3,000,000,000. Generating images with zoom greater than this value will not be fun.
 
-## Zoom multiplier you might want to use
+## Zoom multipliers
 
 Double the zoom value every:
 
@@ -74,12 +84,12 @@ Double the zoom value every:
 * 30 frames: 1.0233738920 -> max number of frames: 945
 * 60 frames: 1.0116194403 -> max number of frames: 1889
 
-## Interesting coordinates to generate images
+## Interesting coordinates
 
 X: -0.235124965
 Y:  0.827215300
 
-## Turn still images into a video
+## Create a video
 
 After successful generation of multiple images with increasing zoom factor you might want to combine all of them into a video using `ffmpeg` command line tool.
 
@@ -96,3 +106,7 @@ Here's some explanation what happens here.
 * cat \`ls -v | grep '\.png'\` - retrieve contents of all png files in ascending order
 * the whole command - read all png files and pass them to ffmpeg to combine them into a single mp4 file
 
+## Sources
+
+* Golem Yagna python examples - https://github.com/golemfactory/yapapi
+* Geomandel - Mandelbrot generator- https://github.com/crapp/geomandel
