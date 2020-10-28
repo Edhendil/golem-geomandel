@@ -5,6 +5,8 @@ Each image is a separate subtask processed on a Golem network provider node. And
 
 It also is a full example showing how to build your own Docker image and use it for task execution in Golem network with the new Yagna python API.
 
+Here's a video I created -> https://www.youtube.com/watch?v=vKH7x2SrkEo. Original quality is better than what YouTube serves.
+
 Special thanks to the owner of https://github.com/crapp/geomandel github project which I use to generate Mandelbrot images.
 
 ## Table of contents
