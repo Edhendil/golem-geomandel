@@ -56,7 +56,7 @@ def parse_params(argv) -> RequestorParameters:
     
     # prepare default values for golem parameters
     subnet_tag = 'devnet-alpha.2'
-    max_workers = 10
+    max_workers = 100
     budget = 10.0
 
     try:
