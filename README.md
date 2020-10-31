@@ -47,7 +47,10 @@ Golem setup. If you encounter an issue then refer to https://handbook.golem.netw
 Geomandel requestor setup
 
 1. `git clone https://github.com/Edhendil/golem-geomandel.git`
-2. (optional) Create virtual environment and activate it
+2. `cd golem-geomandel`
+3. (optional venv) `pip install venv`
+4. (optional venv) `python3 -m venv env`
+5. (optional venv) `source env/bin/activate`
 3. `pip install -r requirements.txt`
 
 You're now ready to generate some Mandelbrot images.
