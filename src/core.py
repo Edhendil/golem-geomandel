@@ -30,7 +30,7 @@ class MandelbrotGenerationParameters:
 class RequestorParameters:
     """Container for all requestor script parameters"""
     golem: GolemParameters
-    geomandel: MandelbrotGenerationParameters
+    mandelbrot: MandelbrotGenerationParameters
 
 # Alias for Yagna tasks with GeomandelData input and file path result
 GeomandelTask = Task[GeomandelData, str]

@@ -35,7 +35,7 @@ class SubtaskGenerator:
         """
         # 1.02337
         # enumerate used as I need each item index
-        for inner_index, zoom in enumerate(_zoom_sequence_limited(mandelbrotParameters.start_index, mandelbrotParameters.frame_count, mandelbrotParameters.multiplier)):
+        for inner_index, zoom in enumerate(_zoom_sequence_limited(mandelbrotParameters.offset, mandelbrotParameters.count, mandelbrotParameters.multiplier)):
             # calculate the global index
-            frame_index = mandelbrotParameters.start_index + inner_index
+            frame_index = mandelbrotParameters.offset + inner_index
             yield GeomandelData(mandelbrotParameters.x, mandelbrotParameters.y, zoom, _local_output_path(frame_index))

@@ -28,11 +28,11 @@ class MandelbrotProcessor:
         self.engine = engine
 
     @staticmethod
-    async def instance(golemParameters: GolemParameters):
+    async def instance(golem_parameters: GolemParameters):
         """Creates processor with default settings"""
-        return MandelbrotProcessor(SubtaskGenerator(), await GeomandelEngine.instance(golemParameters))
+        return MandelbrotProcessor(SubtaskGenerator(), await GeomandelEngine.instance(golem_parameters))
 
-    async def generate_frames(self, parameters: RequestorParameters):
+    async def generate_frames(self, parameters: MandelbrotGenerationParameters):
         """Generates mandelbrot images using Golem for the provided coordinates
         
         Parameters
@@ -40,7 +40,7 @@ class MandelbrotProcessor:
         parameters : RequestorParameters
             Central point coordinates and frame details
         """
-        geomandel_tasks: [GeomandelData] = self.subtask_generator.create_geomandel_tasks(parameters.mandelbrot)
+        geomandel_tasks: [GeomandelData] = self.subtask_generator.create_geomandel_tasks(parameters)
         await self.engine.execute(geomandel_tasks)
 
 def print_help():
@@ -93,8 +93,8 @@ async def main(argv):
     """Parsing arguments and executing the logic"""
     enable_default_logger()
     params: RequestorParameters = parse_params(argv)
-    processor: MandelbrotProcessor = await MandelbrotProcessor.instance(params)
-    await processor.generate_frames(params)
+    processor: MandelbrotProcessor = await MandelbrotProcessor.instance(params.golem)
+    await processor.generate_frames(params.mandelbrot)
 
 def asyncio_loop_setup(coroutine):
     """Setting up the event loop for any coroutine"""

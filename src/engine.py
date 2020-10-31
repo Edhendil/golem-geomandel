@@ -76,13 +76,13 @@ class GeomandelEngine:
         self.yagna = yagna
 
     @staticmethod
-    async def instance(golemParameters: GolemParameters):
+    async def instance(golem_parameters: GolemParameters):
         """Creates an instance of GeomandelEngine. Static factory."""
         repository = ImageRepository()
         # retrieve the image link to geomandel docker image together with constraints
         package = await repository.get_geomandel_image(_MINIMAL_MEMORY, _MINIMAL_STORAGE)
         # prepares the yagna engine
-        yagna = YagnaContext(package, golemParameters.max_workers, golemParameters.budget, golemParameters.subnet_tag)
+        yagna = YagnaContext(package, golem_parameters.max_workers, golem_parameters.budget, golem_parameters.subnet_tag)
         # wraps it in geomandel layer
         return GeomandelEngine(yagna)
 
